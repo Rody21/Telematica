@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados</title>
+    <link rel="shortcut icon" href="img/Balon.webp" type="image/x-icon">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+</head>
+
+<body>
+    <header class="hero">
+        <nav class="nav container">
+
+            <div class="nav__logo">
+                <h2 class="nav__title">Qatar 2022</h2>
+            </div>
+
+            <ul class="nav__link nav__link--menu">
+                <li class="nav__item">
+                    <a href="../Telematica/index.html" class="nav__links">Inicio</a>
+                </li>
+
+                <li class="nav__item">
+                    <a href="../Telematica/Resultados.html" class="nav__links">Fechas y resultados</a>
+                </li>
+
+                <li class="nav__item">
+                    <a href="#" class="nav__links">Iniciar sesion</a>
+                </li>
+
+                <li class="nav__item">
+                    <a href="#" class="nav__links">Registrarse</a>
+                </li>
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <main>
+        <section class="tablas">
+            <h2>Partidos Jugados</h2>
+            <script src="../Telematica/js/Partidos.js"></script>
+
+            <div class="tablas__container container">
+
+                <img src="../Telematica/img/leftarrow.svg" class="jugados__arrow" id="before">
+
+                <section class="tablas__body tablas__body--show" data-id="1">
+
+                    <table class="container table">
+                        <thead>
+                            <td>Local</td>
+                            <td>Visitante</td>
+                        </thead>
+                        <tbody id="Partidos">
+                        </tbody>
+                    </table>
+
+                </section>
+
+                <section class="tablas__body" data-id="2">
+                    
+                    <table class="container table">
+                        <thead>
+                            <td>Local</td>
+                            <td>Visitante</td>
+                        </thead>
+                        <tbody id="Partidos">
+                        </tbody>
+                    </table>
+
+                </section>
+
+                <section class="tablas__body" data-id="3">    
+                    <table class="container table">
+                        <thead>
+                            <td>Local</td>
+                            <td>Visitante</td>
+                        </thead>
+                        <tbody id="Partidos">
+                        </tbody>
+                    </table>
+
+                </section>
+
+                <section class="tablas__body" data-id="4">    
+                    <table class="container table">
+                        <thead>
+                            <td>Local</td>
+                            <td>Visitante</td>
+                        </thead>
+                        <tbody id="Partidos">
+                        </tbody>
+                    </table>
+
+                </section>
+
+                <img src="../Telematica/img/rightarrow.svg" class="jugados__arrow" id="next">
+
+            </div>
+
+        </section>
+    </main>
+
+    <script src="../Telematica/js/slider.js"></script>
+
+
+</body>
+
+</html>
