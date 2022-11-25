@@ -71,8 +71,8 @@
 
                         <div class="Admin__formulario">
                             <form action="../Telematica/php/FArbitros.php" method="get">
-                                <p class="Admin__paragraph"> Nombre: <input type="text" name="Nombre"></p>
-                                <label class="Admin__paragraph"">Procedencia:</label>
+                                <p class="Admin__paragraph"> Nombre: <input class="Admin__text" type="text" name="Nombre"></p>
+                                <label class="Admin__paragraph">Procedencia:</label>
                                 <select name=" Procedencia" id="Country">
                                     <optgroup label="Pais">
                                         <option value="1">Alemania</option>
@@ -84,10 +84,29 @@
                                         <option value="7">Mexico</option>
                                         <option value="8">Polonia</option>
                                     </optgroup>
-                                    </select>
+                                </select>
+
+                                <br><br>
+                                <input class="Admin__button" type="submit" value="Introducir nuevo arbitro">
                             </form>
 
                         </div>
+
+                        <br><br>
+
+                        <br><br>
+
+                        <p class="Admin__paragraph">Borrar arbitro de la nomima perro</p>
+
+                        <div class="Admin__formulario">
+                            <form action="../Telematica/php/DArbitros.php" method="get">
+                                <p class="Admin__paragraph"> id_Arbitro: <input class="Admin__text" type="text" name="id_Arbitros"></p>
+                                <br><br>
+                                <input class="Admin__button" type="submit" value="Delete pitador">
+                            </form>
+
+                        </div>
+
                     </div>
 
                 </div>
@@ -112,8 +131,19 @@
                                 <td>Ubicación</td>
                             </thead>
                             <tbody id="Estadios"></tbody>
-
                         </table>
+                    </div>
+                </div>
+            </article>
+
+
+            <article class="Admin__padding">
+                <div class="Admin__answer">
+                    <h3 class="Admin__title">Grupo1
+                        <span class="Admin__arrow">
+                            <img src="../Telematica/img/down.svg" class="Admin__img">
+                        </span>
+                    </h3>
                     </div>
                 </div>
             </article>
