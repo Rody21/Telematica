@@ -66,7 +66,30 @@
                             <tbody id="Arbitros"></tbody>
 
                         </table>
+
+                        <p class="Admin__paragraph">Ingresar datos del nuevo personaje</p>
+
+                        <div class="Admin__formulario">
+                            <form action="../Telematica/php/FArbitros.php" method="get">
+                                <p class="Admin__paragraph"> Nombre: <input type="text" name="Nombre"></p>
+                                <label class="Admin__paragraph"">Procedencia:</label>
+                                <select name=" Procedencia" id="Country">
+                                    <optgroup label="Pais">
+                                        <option value="1">Alemania</option>
+                                        <option value="2">Argentina</option>
+                                        <option value="3">Belgica</option>
+                                        <option value="4">Brasil</option>
+                                        <option value="5">Francia</option>
+                                        <option value="6">Japon</option>
+                                        <option value="7">Mexico</option>
+                                        <option value="8">Polonia</option>
+                                    </optgroup>
+                                    </select>
+                            </form>
+
+                        </div>
                     </div>
+
                 </div>
             </article>
 
