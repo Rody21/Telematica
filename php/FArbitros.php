@@ -1,6 +1,5 @@
 <?php
 include 'varia.php';
-
 $Nombre = $_GET['Nombre'];
 $Procedencia = $_GET['Procedencia'];
 $conn = mysqli_connect($Bendpoint, $BUSER, $Bclave, $BName);  // Establece conexi�n

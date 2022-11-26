@@ -21,7 +21,7 @@ function table() {
   });
 
   $.ajax({
-    url: "../Telematica/php/Partidos1.php",
+    url: "../Telematica/php/Partidos2.php",
     type: "GET",
     dataType: "JSON",
     data: {}, //this is data you send to your server
