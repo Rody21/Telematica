@@ -81,7 +81,10 @@ x:root{
     
 }
 
+/*Resultados*/
+
 .tablas{
+    background-color: #e5e5f7;
     text-align:center;
     color: #000;
 }

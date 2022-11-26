@@ -10,8 +10,7 @@ function table(){
       
           for (i = 0; i < res.length; i++) {
             $('#testing').append(
-                '<tr><td>' + res[i]['Pos'] +
-                '</td><td>' + res[i]['Equipo'] + 
+                '<tr><td>' + res[i]['Equipo'] + 
                 '</td><td>' + res[i]['PJ'] + 
                 '</td><td>' + res[i]['G'] +
                 '</td><td>' + res[i]['E'] +
