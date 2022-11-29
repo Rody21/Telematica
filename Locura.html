@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Qatar 2022</title>
+    <title>Resultados</title>
     <link rel="shortcut icon" href="img/Balon.webp" type="image/x-icon">
     <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -46,37 +48,38 @@
     </header>
 
     <main>
-        <section class="container about">
-            <h2 class="subtitle">Tabla de posiciones</h2>
-            
+        <!-- select para el Local -->
+        <div class="form-group">
+            <label for="Local" class="text-uppercase text-primary">Local</label>
+            <select class="custom-select form-control" id="Local">
+                <!-- cargar con js -->
+            </select>
+        </div>
 
-            <table class="container table">
-                <!-- Se genera una tabla (la cual se entregara a index.php) -->
-                <thead>
-                    <td>Equipo</td>
-                    <td>PJ</td>
-                    <td>G</td>
-                    <td>E</td>
-                    <td>P</td>
-                    <td>GF</td>
-                    <td>GC</td>
-                    <td>DG</td>
-                    <td>Pts</td>
-                </thead>
-                <tbody id="testing">
-                </tbody>
-            </table>
-        </section>
+        <br>
+        <br>
+        <!-- select para el Visitante -->
+        <div class="form-group">
+            <label for="Visitante" class="text-uppercase text-primary">Visitante</label>
+            <select class="custom-select form-control" id="Visitante">
+                <!-- cargar con js dependiendo del Local -->
+            </select>
+        </div>
 
-        <section>
-            <div>
-                <br>
-                <br>
-            </div>
-        </section>
+        <br>
+        <br>
+        <!-- select para el arbitro -->
+        <div class="form-group">
+            <label for="Arbitro" class="text-uppercase text-primary">Arbitro</label>
+            <select class="custom-select form-control" id="Arbitro">
+                <!-- cargar con js dependiendo de los equipos -->
+            </select>
+        </div>
+
+        <br>
+        <br>
     </main>
-
-    <script src="../Telematica/js/Posicion.js"></script>
+    <script src="../Telematica/Controlador/select.js"></script>
 
 </body>
 
