@@ -56,6 +56,25 @@
         echo $jsonstring;
     }
 
+    function obtenerEstadio(){
+        include '../php/Prueba.php';
+
+        $query = "SELECT id_estadio,Estadio FROM Final.Estadios";
+        $result = mysqli_query($conection, $query);
+        
+        $json = array();
+
+        while($row = mysqli_fetch_array($result)) {
+            $json[] = array(
+                'id_Estadio' => $row['id_estadio'],
+                'Estadios' => $row['Estadio'],
+            );
+        }  
+
+        $jsonstring = json_encode($json);
+        echo $jsonstring;
+    }
+
 
     if(isset($_POST['codigoLocal']) ){
         $id_Local = $_POST['codigoLocal'];
@@ -63,6 +82,8 @@
     }else if(isset($_POST['codigoVisitante'])){
         $id_Visitante = $_POST['codigoVisitante'];
         obtenerArbitros($id_Visitante);
+    }elseif(isset($_POST['codigoArbitros'])){
+        obtenerEstadio();
     }else{
         obtenerLocal();
     }

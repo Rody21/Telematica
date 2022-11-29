@@ -3,6 +3,7 @@ $(document).ready(function () {
   let $Local = document.getElementById("Local");
   let $Visitante = document.getElementById("Visitante");
   let $Arbitro = document.getElementById("Arbitro");
+  let $Estadio = document.getElementById("Estadio");
 
   function cargarLocal() {
     $.ajax({
@@ -86,4 +87,39 @@ $(document).ready(function () {
 
     cargarArbitros(sendDatos);
   });
+
+
+
+  function cargarEstadio(sendDatos){
+    $.ajax({
+      type: "POST",
+      url: "../Telematica/Modelo/select.php",
+      data: sendDatos,
+      success: function (response) {
+        const Estadium = JSON.parse(response);
+
+        let template =
+          '<option class="form-control" selected disabled>-- Seleccione --</option>';
+
+        Estadium.forEach((Estadios) => {
+          template += `<option class="form-control" value="${Estadios.id_Estadio}">${Estadios.Estadios}</option>`;
+        });
+
+        $Estadio.innerHTML = template;
+      },
+    });
+
+  }
+
+  $Arbitro.addEventListener("change",function(){
+    const codArbitros = $Arbitro.value;
+
+    const sendDatos = {
+      codigoArbitros: codArbitros,
+    };
+
+    cargarEstadio(sendDatos);
+  });
+
+
 });
