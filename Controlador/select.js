@@ -4,11 +4,34 @@ $(document).ready(function () {
   let $Visitante = document.getElementById("Visitante");
   let $Arbitro = document.getElementById("Arbitro");
   let $Estadio = document.getElementById("Estadio");
+  let $Grupo = document.getElementById("Grupo");
 
-  function cargarLocal() {
+  function cargarGrupo() {
     $.ajax({
       type: "GET",
       url: "../Telematica/Modelo/select.php",
+      success: function (response) {
+        const Grupos = JSON.parse(response);
+
+        let template =
+          '<option class="form-control" selected disabled>-- Seleccione --</option>';
+
+        Grupos.forEach((Group) => {
+          template += `<option class="form-control" value="${Group.id_grupo}">${Group.grupo}</option>`;
+        });
+
+        $Grupo.innerHTML = template;
+      },
+    });
+  }
+
+  cargarGrupo();
+
+  function cargarLocal(sendDatos) {
+    $.ajax({
+      type: "POST",
+      url: "../Telematica/Modelo/select.php",
+      data: sendDatos,
       success: function (response) {
         const Locales = JSON.parse(response);
 
@@ -24,7 +47,19 @@ $(document).ready(function () {
     });
   }
 
-  cargarLocal();
+  $Grupo.addEventListener("change", function () {
+    const codGrupo = $Grupo.value;
+
+    const sendDatos = {
+      codigoGrupo: codGrupo,
+    };
+
+    cargarLocal(sendDatos);
+
+    $Arbitro.innerHTML = "";
+    $Estadio.innerHTML = "";
+    $Visitante.innerHTML = "";
+  });
 
   function cargarVisitantes(sendDatos) {
     $.ajax({
@@ -55,7 +90,7 @@ $(document).ready(function () {
 
     cargarVisitantes(sendDatos);
 
-    $Arbitro.innerHTML = ""
+    $Arbitro.innerHTML = "";
   });
 
   function cargarArbitros(sendDatos) {
@@ -88,9 +123,7 @@ $(document).ready(function () {
     cargarArbitros(sendDatos);
   });
 
-
-
-  function cargarEstadio(sendDatos){
+  function cargarEstadio(sendDatos) {
     $.ajax({
       type: "POST",
       url: "../Telematica/Modelo/select.php",
@@ -108,10 +141,9 @@ $(document).ready(function () {
         $Estadio.innerHTML = template;
       },
     });
-
   }
 
-  $Arbitro.addEventListener("change",function(){
+  $Arbitro.addEventListener("change", function () {
     const codArbitros = $Arbitro.value;
 
     const sendDatos = {
@@ -120,6 +152,4 @@ $(document).ready(function () {
 
     cargarEstadio(sendDatos);
   });
-
-
 });

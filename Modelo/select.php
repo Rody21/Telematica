@@ -1,8 +1,28 @@
 <?php
-    function obtenerLocal(){
+
+    function obtenerGrupo(){
         include '../php/Prueba.php';
 
-        $query = "SELECT id_Equipos,Equipo FROM Final.Equipos";
+        $query = "SELECT id_grupo,Grupo FROM Final.Grupos";
+        $result = mysqli_query($conection, $query);
+
+        $json = array();
+
+        while($row = mysqli_fetch_array($result)) {
+            $json[] = array(
+                'id_grupo' => $row['id_grupo'],
+                'grupo' => $row['Grupo'],
+            );
+        }  
+
+        $jsonstring = json_encode($json);
+        echo $jsonstring;
+    }
+
+    function obtenerLocal($id_grupo){
+        include '../php/Prueba.php';
+
+        $query = "SELECT id_Equipos,Equipo FROM Final.Local WHERE id_grupo=$id_grupo";
         $result = mysqli_query($conection, $query);
 
         $json = array();
@@ -75,8 +95,10 @@
         echo $jsonstring;
     }
 
-
-    if(isset($_POST['codigoLocal']) ){
+    if(isset($_POST['codigoGrupo'])){
+        $id_grupo = $_POST['codigoGrupo'];
+        obtenerLocal($id_grupo);
+    }elseif(isset($_POST['codigoLocal']) ){
         $id_Local = $_POST['codigoLocal'];
         obtenerVisitante($id_Local);
     }else if(isset($_POST['codigoVisitante'])){
@@ -85,7 +107,7 @@
     }elseif(isset($_POST['codigoArbitros'])){
         obtenerEstadio();
     }else{
-        obtenerLocal();
+        obtenerGrupo();
     }
     
 
