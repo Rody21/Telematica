@@ -5,8 +5,10 @@ $(document).ready(function () {
   let $Arbitro = document.getElementById("Arbitro");
   let $Estadio = document.getElementById("Estadio");
   let $Grupo = document.getElementById("Grupo");
-  let $intro = document.getElementById("intro")
-
+  let $Fecha = document.getElementById("Fecha");
+  let $Hora = document.getElementById("Hora");
+  
+  //Configuracion de los desplegables
   function cargarGrupo() {
     $.ajax({
       type: "GET",
@@ -153,4 +155,32 @@ $(document).ready(function () {
 
     cargarEstadio(sendDatos);
   });
+
+  // para el boton
+
+  document.getElementById("intro").onclick = function() {
+    //Variables de los input
+    var Local = $Local.value;           //input Local
+    var Visitante = $Visitante.value;   //input Visitante
+    var Arbitro = $Arbitro.value;       //input Arbitro
+    var Estadio = $Estadio.value;       //input Estadio
+    var Fecha = $Fecha.value;
+    var Hora = $Hora.value;
+
+    $.ajax({
+      url: '../Telematica/php/Program.php',
+      type: 'post',
+      data: {
+          Local: Local,
+          Visitante: Visitante,
+          Arbitro: Arbitro,
+          Estadio: Estadio,
+          Fecha: Fecha,
+          Hora: Hora
+      }
+
+  }).done(function (res) {
+      console.log("funciona");
+  })
+  }
 });
