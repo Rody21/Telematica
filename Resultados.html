@@ -8,6 +8,8 @@
     <title>Resultados</title>
     <link rel="shortcut icon" href="img/Balon.webp" type="image/x-icon">
     <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -51,7 +53,7 @@
             <div class="tablas__container container">
 
                 <section class="tablas__body tablas__body--show">
-                    <table class="container table">
+                    <table class="container table" border="2">
                         <thead>
                             <td>Local</td>
                             <td> </td>
@@ -69,6 +71,29 @@
 
         <section>
             <div>
+                <h3>Ver estadisticas</h3>
+            </div>
+        </section>
+
+        <section>
+            <div>
+                <div class="form-group">
+                    <label for="Resultado" class="text-uppercase text-primary">Buscar estadisticas de: </label>
+                    <select class="custom-select form-control" id="Resultado" name="Resultado">
+                        <!-- cargar con js Estadio -->
+                    </select>
+                </div>
+
+
+            <br>
+            <a href="../Telematica/Distic.html" id="Send">Buscar</a>
+            <br>
+            <br>
+            </div>
+        </section>
+
+        <section>
+            <div>
                 <br>
 
                 <br>
@@ -81,7 +106,7 @@
             <div class="tablas__container container">
 
                 <section class="tablas__body tablas__body--show">
-                    <table class="container table">
+                    <table class="container table" border="2">
                         <thead>
                             <td>Local</td>
                             <td>Visitante</td>
@@ -95,90 +120,10 @@
             </div>
         </section>
 
-        <section>
-            <div>
-                <br>
-                <h2 class="subtitle">Programacion de Fechas</h2>
-            </div>
-        </section>
-
-        <section class="Admin__container">
-            <article class="Admin__padding">
-                <div class="Admin__answer">
-                    <h3 class="Admin__title">Grupo 1
-                        <span class="Admin__arrow">
-                            <img src="../Telematica/img/down.svg" class="Admin__img">
-                        </span>
-                    </h3>
-
-                    <div class="Admin__show">
-                        <p class="Admin__paragraph">Equipos</p>
-                        <div class="Admin__formulario">
-                            <form action="../Telematica/php/Grupo1.php" method="get">
-                                <label class="Admin__paragraph">Local:</label>
-                                <select name="Local" id="CountryL">
-                                    <optgroup label="Pais">
-                                        <option value="1">Alemania</option>
-                                        <option value="2">Argentina</option>
-                                        <option value="3">Belgica</option>
-                                        <option value="4">Brasil</option>
-                                    </optgroup>
-                                </select>
-
-                                <br><br>
-
-                                <label class="Admin__paragraph">Visitante:</label>
-                                <select name="Visitante" id="CountryV">
-                                    <optgroup label="Pais">
-                                        <option value="1">Alemania</option>
-                                        <option value="2">Argentina</option>
-                                        <option value="3">Belgica</option>
-                                        <option value="4">Brasil</option>
-                                    </optgroup>
-                                </select>
-
-                                <br><br>
-
-                                <label class="Admin__paragraph">Arbitro:</label>
-                                <select name="Arbitro" id="Arbitro">
-                                    <optgroup label="Arbitro">
-                                        <option value="1">Stephanie Frappart</option>
-                                        <option value="2">Raphael Claus</option>
-                                        <option value="3">Szymon Marciniak</option>
-                                        <option value="4">Yoshimi Yamashita </option>
-                                        <option value="5">Facundo Tello</option>
-                                        <option value="6">César Ramos </option>
-                                        <option value="7">Mauro Vigliano</option>
-                                    </optgroup>
-                                </select>
-
-                                <br><br>
-
-                                <label class="Admin__paragraph">Estadio:</label>
-                                <select name="Estadio" id="Estadio">
-                                    <optgroup label="Estadio">
-                                        <option value="1">Al Rayyan</option>
-                                        <option value="2">Al Bayt</option>
-                                        <option value="3">Al Janoub</option>
-                                        <option value="4">Lusail</option>
-                                    </optgroup>
-                                </select>
-
-                                <br><br>
-                                <input class="Admin__button" type="submit" value="Introducir nuevo partido">
-                            </form>
-
-                        </div>
-
-                    </div>
-
-                </div>
-            </article>
-        </section>
-
     </main>
     <script src="../Telematica/js/Partido1.js"></script>
     <script src="../Telematica/js/slideArbitros.js"></script>
+    <script src="../Telematica/Controlador/Est.js"></script>
 
 
 

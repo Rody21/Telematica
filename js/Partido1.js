@@ -9,6 +9,7 @@ function table() {
       console.log(res.length);
 
       for (i = 0; i < res.length; i++) {
+        c=i+1;
         $("#Partidos1").append(
           "<tr><td>" + res[i]["Local"] +
             "</td><td>" + res[i]["GolesL"] +
