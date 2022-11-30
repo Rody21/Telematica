@@ -49,54 +49,75 @@
 
     <main>
 
-        <!-- select para el grupo -->
-        <div class="form-group">
-            <label for="Grupo" class="text-uppercase text-primary">Grupo</label>
-            <select class="custom-select form-control" id="Grupo">
-                <!-- cargar con js Grupo -->
-            </select>
-        </div>
+        <form action="../Telematica/php/Program.php" method="POST">
+            <!-- select para el grupo -->
+            <div class="form-group">
+                <label for="Grupo" class="text-uppercase text-primary">Grupo</label>
+                <select class="custom-select form-control" id="Grupo" name="Grupo">
+                    <!-- cargar con js Grupo -->
+                </select>
+            </div>
 
-        <br>
+            <br>
+            <br>
+
+            <!-- select para el Local -->
+            <div class="form-group">
+                <label for="Local" class="text-uppercase text-primary">Local</label>
+                <select class="custom-select form-control" id="Local" name="Local">
+                    <!-- cargar con js dependiendo del grupo -->
+                </select>
+            </div>
+
+            <br>
+            <br>
+            <!-- select para el Visitante -->
+            <div class="form-group">
+                <label for="Visitante" class="text-uppercase text-primary">Visitante</label>
+                <select class="custom-select form-control" id="Visitante" name="Visitante">
+                    <!-- cargar con js dependiendo del Local -->
+                </select>
+            </div>
+
+            <br>
+            <br>
+            <!-- select para el arbitro -->
+            <div class="form-group">
+                <label for="Arbitro" class="text-uppercase text-primary">Arbitro</label>
+                <select class="custom-select form-control" id="Arbitro" name="Visitante">
+                    <!-- cargar con js dependiendo de los equipos -->
+                </select>
+            </div>
+
+            <br>
+            <br>
+            <!-- select para el estadio -->
+            <div class="form-group">
+                <label for="Estadio" class="text-uppercase text-primary">Estadio</label>
+                <select class="custom-select form-control" id="Estadio" name="Estadio">
+                    <!-- cargar con js Estadio -->
+                </select>
+            </div>
+
+            <br>
+            <br>
+
+            <!-- <div class="datefinish">
+                <h5>Seleccione fecha Partido</h5>
+                <input type="date" id="finish" min='2000-01-01'>
+                <br>
+                <h5>Seleccione hora Partido</h5>
+                <input type="time" id="hfinish">
+            </div> -->
+
+            <!-- <br>
+            <br> -->
+            <input type="submit" value="Registrar" id="intro">
+            <br>
+            <br>
+        </form>
         <br>
 
-        <!-- select para el Local -->
-        <div class="form-group">
-            <label for="Local" class="text-uppercase text-primary">Local</label>
-            <select class="custom-select form-control" id="Local">
-                <!-- cargar con js dependiendo del grupo -->
-            </select>
-        </div>
-
-        <br>
-        <br>
-        <!-- select para el Visitante -->
-        <div class="form-group">
-            <label for="Visitante" class="text-uppercase text-primary">Visitante</label>
-            <select class="custom-select form-control" id="Visitante">
-                <!-- cargar con js dependiendo del Local -->
-            </select>
-        </div>
-
-        <br>
-        <br>
-        <!-- select para el arbitro -->
-        <div class="form-group">
-            <label for="Arbitro" class="text-uppercase text-primary">Arbitro</label>
-            <select class="custom-select form-control" id="Arbitro">
-                <!-- cargar con js dependiendo de los equipos -->
-            </select>
-        </div>
-
-        <br>
-        <br>
-         <!-- select para el estadio -->
-         <div class="form-group">
-            <label for="Estadio" class="text-uppercase text-primary">Estadio</label>
-            <select class="custom-select form-control" id="Estadio">
-                <!-- cargar con js Estadio -->
-            </select>
-        </div>
     </main>
     <script src="../Telematica/Controlador/select.js"></script>
 

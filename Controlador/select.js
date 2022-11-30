@@ -5,6 +5,7 @@ $(document).ready(function () {
   let $Arbitro = document.getElementById("Arbitro");
   let $Estadio = document.getElementById("Estadio");
   let $Grupo = document.getElementById("Grupo");
+  let $intro = document.getElementById("intro")
 
   function cargarGrupo() {
     $.ajax({

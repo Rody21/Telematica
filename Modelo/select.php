@@ -98,7 +98,7 @@
     if(isset($_POST['codigoGrupo'])){
         $id_grupo = $_POST['codigoGrupo'];
         obtenerLocal($id_grupo);
-    }elseif(isset($_POST['codigoLocal']) ){
+    }elseif(isset($_POST['codigoLocal'])){
         $id_Local = $_POST['codigoLocal'];
         obtenerVisitante($id_Local);
     }else if(isset($_POST['codigoVisitante'])){
